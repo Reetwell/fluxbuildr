@@ -61,18 +61,25 @@ export default function Contact() {
                   <label htmlFor="service" className="block text-sm font-medium text-gray-900 mb-2">
                     What are you looking for?
                   </label>
-                  <select
-                    id="service"
-                    name="service"
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors bg-white"
-                    required
-                  >
-                    <option value="">Select a service</option>
-                    <option value="landing">Landing Page (£150)</option>
-                    <option value="multipage">Multi-Page Site (£300)</option>
-                    <option value="custom">Custom Project</option>
-                    <option value="other">Something else</option>
-                  </select>
+                  <div className="relative">
+                    <select
+                      id="service"
+                      name="service"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors bg-white appearance-none cursor-pointer text-gray-900"
+                      required
+                    >
+                      <option value="" className="text-gray-500">Select a service</option>
+                      <option value="landing">Landing Page (£150)</option>
+                      <option value="multipage">Multi-Page Site (£300)</option>
+                      <option value="custom">Custom Project</option>
+                      <option value="other">Something else</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
 
                 <div>
