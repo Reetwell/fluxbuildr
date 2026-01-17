@@ -1,35 +1,20 @@
 import Link from 'next/link';
+import AISearchInput from '@/components/AISearchInput';
 
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="min-h-[90vh] flex items-center">
-        <div className="max-w-6xl mx-auto px-6 py-20">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
-              Websites that work.
-              <span className="text-primary-600"> Built for you.</span>
-            </h1>
-            <p className="mt-6 text-xl text-gray-600 max-w-2xl">
-              Modern, professional websites for businesses that want to stand out.
-              Quality design at prices that make sense.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/services"
-                className="bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-700 transition-colors text-center"
-              >
-                View Services
-              </Link>
-              <Link
-                href="/contact"
-                className="border-2 border-gray-200 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:border-gray-300 hover:bg-gray-50 transition-colors text-center"
-              >
-                Get in Touch
-              </Link>
-            </div>
-          </div>
+      {/* Hero Section with AI Search */}
+      <section className="min-h-[90vh] flex items-center justify-center">
+        <div className="max-w-4xl mx-auto px-6 py-20 text-center">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
+            Websites that work.
+            <span className="text-primary-600"> Built for you.</span>
+          </h1>
+          <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+            Tell us about your business and get an instant preview of your perfect website.
+          </p>
+          <AISearchInput />
         </div>
       </section>
 
