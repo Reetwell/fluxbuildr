@@ -29,16 +29,15 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Plumber Demo */}
             <div className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-56 bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
-                <div className="text-center relative z-10">
-                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                    </svg>
-                  </div>
-                  <span className="text-white font-semibold text-lg">Swift Plumbing</span>
+              <div className="h-56 relative overflow-hidden bg-gray-100">
+                <div className="absolute inset-0 w-[200%] h-[200%] origin-top-left scale-50">
+                  <iframe
+                    src="/demos/plumber"
+                    className="w-full h-[900px] pointer-events-none"
+                    title="Swift Plumbing Demo Preview"
+                  />
                 </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
