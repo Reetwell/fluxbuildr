@@ -23,34 +23,61 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Coming Soon */}
-      <section className="pb-32">
+      {/* Portfolio Grid */}
+      <section className="pb-24">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-gray-50 rounded-2xl p-12 md:p-20 text-center">
-            <div className="w-20 h-20 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-8">
-              <svg className="w-10 h-10 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-              </svg>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Plumber Demo */}
+            <div className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="h-56 bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
+                <div className="text-center relative z-10">
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                  </div>
+                  <span className="text-white font-semibold text-lg">Swift Plumbing</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm font-medium">Demo Template</span>
+                  <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">Trades</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Plumber Website</h3>
+                <p className="text-gray-600 mb-4">
+                  Professional plumbing website with emergency call-outs, service listings, trust badges, and contact forms. Built to generate leads.
+                </p>
+                <div className="flex items-center gap-3">
+                  <Link
+                    href="/demos/plumber"
+                    target="_blank"
+                    className="flex-1 bg-gray-900 text-white text-center py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                  >
+                    View Demo
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="flex-1 border-2 border-gray-200 text-gray-900 text-center py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+                  >
+                    Get This Style
+                  </Link>
+                </div>
+              </div>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Coming Soon
-            </h2>
-            <p className="text-lg text-gray-600 max-w-lg mx-auto mb-8">
-              We&apos;re currently working on our first projects. Check back soon to see examples of our work.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/services"
-                className="bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
-              >
-                View Our Services
-              </Link>
-              <Link
-                href="/contact"
-                className="border-2 border-gray-200 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:border-gray-300 hover:bg-gray-50 transition-colors"
-              >
-                Start a Project
-              </Link>
+
+            {/* More Coming Soon */}
+            <div className="bg-gray-50 rounded-2xl border border-dashed border-gray-300 flex items-center justify-center p-12">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-700 mb-1">More Coming Soon</h3>
+                <p className="text-gray-500 text-sm">New templates added regularly</p>
+              </div>
             </div>
           </div>
         </div>

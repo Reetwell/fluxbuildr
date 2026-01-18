@@ -1,4 +1,4 @@
-import { findMatchingTemplate, Template } from '@/data/templates';
+import { findMatchingTemplate, getGenericTemplate, Template } from '@/data/templates';
 
 export interface ChatResponse {
   message: string;
@@ -79,25 +79,37 @@ function detectFeatures(input: string): string[] {
   return features;
 }
 
-function generateMessage(template: Template, price: PriceResult): string {
+function generateMessage(template: Template, price: PriceResult, hasSpecificMatch: boolean): string {
   const businessType = template.name.toLowerCase();
 
+  // If no specific match, give a generic helpful response
+  if (!hasSpecificMatch) {
+    return `Thanks for sharing! We'd love to help build a website for your business. Tell us a bit more about what you do, and we can recommend the perfect design.\n\nIn the meantime, here's what a typical project might look like:`;
+  }
+
+  // If template has a demo, mention it
+  const demoNote = template.hasDemo
+    ? `\n\n👉 Check out our live demo below to see exactly what you'd get!`
+    : '';
+
   if (price.tier === 'custom') {
-    return `Based on what you've described, it sounds like you need a more advanced solution. For projects involving e-commerce, booking systems, or custom functionality, we'd love to chat about your specific needs and provide a tailored quote.\n\nHere's a ${businessType} template that might inspire the design direction:`;
+    return `Based on what you've described, it sounds like you need a more advanced solution. For projects involving e-commerce, booking systems, or custom functionality, we'd love to chat about your specific needs and provide a tailored quote.\n\nHere's our ${businessType.replace(' website', '')} template that might inspire the design direction:${demoNote}`;
   }
 
   if (price.tier === 'landing') {
-    return `A focused landing page sounds perfect for what you need! For ${price.estimate}, we can create a stunning single-page site that converts visitors into customers.\n\nHere's a ${businessType} template that matches your vibe:`;
+    return `A focused landing page sounds perfect for what you need! For ${price.estimate}, we can create a stunning single-page site that converts visitors into customers.\n\nHere's our ${businessType.replace(' website', '')} template:${demoNote}`;
   }
 
-  return `Great! A professional multi-page website would be perfect for your ${businessType.includes('service') ? 'business' : businessType}. For ${price.estimate}, you'll get a complete website with multiple pages, contact form, and everything you need to impress your customers.\n\nHere's a template that could work well:`;
+  return `Great! A professional multi-page website would be perfect for your ${businessType.replace(' website', '')} business. For ${price.estimate}, you'll get a complete website with multiple pages, contact form, and everything you need to impress your customers.\n\nHere's our recommended template:${demoNote}`;
 }
 
 export function processChat(input: string): ChatResponse {
-  const template = findMatchingTemplate(input);
+  const matchedTemplate = findMatchingTemplate(input);
+  const template = matchedTemplate || getGenericTemplate();
+  const hasSpecificMatch = matchedTemplate !== null;
   const price = detectPriceTier(input);
   const features = detectFeatures(input);
-  const message = generateMessage(template, price);
+  const message = generateMessage(template, price, hasSpecificMatch);
 
   return {
     message,
