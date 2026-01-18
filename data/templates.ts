@@ -49,15 +49,16 @@ export const templates: Template[] = [
     color: '#f97316', // Orange
     hasDemo: false,
   },
-  // Restaurant
+  // Restaurant - has live demo
   {
     id: 'restaurant',
     name: 'Restaurant & Café',
     description: 'Warm, appetizing design for food businesses. Showcases menus, atmosphere, and makes booking easy.',
     style: 'Warm & Inviting',
-    keywords: ['restaurant', 'cafe', 'coffee', 'food', 'menu', 'dining', 'bar', 'pub', 'bakery', 'catering', 'takeaway', 'delivery'],
+    keywords: ['restaurant', 'cafe', 'coffee', 'food', 'menu', 'dining', 'bar', 'pub', 'bakery', 'catering', 'takeaway', 'delivery', 'bistro', 'kitchen'],
     color: '#f59e0b', // Amber
-    hasDemo: false,
+    demoUrl: '/demos/restaurant',
+    hasDemo: true,
   },
   // Creative
   {

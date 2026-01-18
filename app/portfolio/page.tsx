@@ -66,16 +66,42 @@ export default function Portfolio() {
               </div>
             </div>
 
-            {/* More Coming Soon */}
-            <div className="bg-gray-50 rounded-2xl border border-dashed border-gray-300 flex items-center justify-center p-12">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                  </svg>
+            {/* Restaurant Demo */}
+            <div className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="h-56 relative overflow-hidden bg-stone-900">
+                <div className="absolute inset-0 w-[200%] h-[200%] origin-top-left scale-50">
+                  <iframe
+                    src="/demos/restaurant"
+                    className="w-full h-[900px] pointer-events-none"
+                    title="Ember & Oak Restaurant Demo Preview"
+                  />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-700 mb-1">More Coming Soon</h3>
-                <p className="text-gray-500 text-sm">New templates added regularly</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-medium">Demo Template</span>
+                  <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">Restaurant</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Restaurant Website</h3>
+                <p className="text-gray-600 mb-4">
+                  Elegant restaurant website with menu showcase, reservation system, and atmospheric design. Perfect for bistros and fine dining.
+                </p>
+                <div className="flex items-center gap-3">
+                  <Link
+                    href="/demos/restaurant"
+                    target="_blank"
+                    className="flex-1 bg-gray-900 text-white text-center py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                  >
+                    View Demo
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="flex-1 border-2 border-gray-200 text-gray-900 text-center py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+                  >
+                    Get This Style
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
