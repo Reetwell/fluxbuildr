@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileNav from "@/components/MobileNav";
+import MainWrapper from "@/components/MainWrapper";
 
 export const metadata: Metadata = {
   title: "Fluxbuildr | Modern Websites for Your Business",
@@ -18,9 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans antialiased">
         <Header />
-        <main className="pt-16 pb-24 md:pb-0">
+        <MainWrapper>
           {children}
-        </main>
+        </MainWrapper>
         <Footer />
         <MobileNav />
       </body>
